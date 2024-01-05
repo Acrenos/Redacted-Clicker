@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>REDACTED Clicker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="Awake()">
+  <script src="script.js"></script>
+  <img src="Art/logo.png" class="logo" id="logo"> 
+  <img id="reassurance" class="reassurance" src="Art/reassurance.jpeg">
+  <div class="bodyD" id="bodyD">
+
+  <!-- Fixed elements; need to be at top -->
+  
+  <div class="factories" id="gamblingCenter">
+    <div class="moneyDiv" id="moneyDiv">Casino <span class="moneyDisplay" id="moneyRangeDisplay"></span></div>
+    <input class="moneyRange" id="moneyRange" type="range">
+    <div class="gamblingStats">
+      <span class="p">25x Money</span>
+      <span class="g">4x Money</span>
+      <span class="r">0.25x Money</span>
+      <span class="w">Nothing</span>
+    </div>
+    <img class="knifePointer" src="Art/knife.png">
+    <div id="wheel" class="wheel" onclick="spinWheel()">
+      <span class="wheelText">SPIN ME!</span>
+    </div>
+  </div>
+    
+  <div id="offlineEarnings" class="offlineEarnings">
+    <span class="questionText">Money per second: <span class="qt1">0/s</span><br>Time since last log: <span class="qt1">0hrs</span><br>Money Earned: <span class="qt1">$0</span></span>
+    <br><br>
+    <button onclick="AcceptOE()" class="accept">Accept the $<span id="OEDisplayMoney"></span>.</button>
+  </div>
+  <div class="question" id="question">
+    <p class="questionText">Are you sure you want to sell your soul? This will clear all of your <span class="qt1">shop upgrades</span>.</p>
+    <button onclick="sellSoul2()" class="soulButton hellYeah">HECK YEAH!</button>
+    <button onclick="exitQuestion()"class="soulButton noThanks">No thank you...</button>
+  </div>
+  <button id="placeholderButton" class="placeholderButton" onclick="Click()"></button>
+  <span id="popupText" class="popupText">SUCCESS!</span>
+	  <!-- Actual stuff -->
+
+  <!-- Statistic Display and Sell-->
+	<div class="statsDisplay">
+  <button id="sellSoul" onclick="sellSoul1()" class="sellSoul">Sell Your Soul</button>
+  <button id="sellPlaceholder" class="sellPlaceholders" onclick="SellPlaceholders()">Sell All (  <span id="placeholderDisplay" class="placeholderDisplay">0</span>
+)</button>
+  </div>
+
+  <!-- Upgrade Buttons & Stock  -->
+  <div class="stock" id="stock">
+    <div class="moneyDiv" id="moneyDiv">Shop (
+    <span id="moneyDisplay" class="moneyDisplay">$0</span> )
+    </div>
+    
+		<span id="upgradeToolText" class="upgradeText">Increases [Placeholder] <br> per click by 50% <br> <span id="upgradeToolTimes" class="upgradeToolTimes">0</span></span>
+		<button id="upgradeTool" class="upgradeButton" onclick="Upgrade('tool')">Upgrade "Tool" <br> <span id="upgradeToolCost"class="buyText">$moneycost</span> <br><span id="tool">Current Tool: Hands</span></button>
+    <!-- <br> -->
+	<!-- Success Rate Button-->
+		<span id="upgradeSuccessRateText" class="upgradeText">Increases Click Success <br> Rate By 5% <br> <span id="upgradeSuccessRateTimes" class="upgradeSuccessRateTimes">0</span></span>
+		<button id="upgradeSuccessRateButton" class="upgradeButton" onclick="Upgrade('successRate')">Upgrade Success Rate <br> <span id="upgradeSuccessRate"class="buyText">$moneycost</span> <br><span id="rate">Current Rate: number%</span></button>
+    <!-- <br> -->
+    <!-- Worker Button -->
+		<span id="upgradeWorkerText" class="upgradeText">Increase Money Per Second <br> By $1 <br> <span id="upgradeWorkerRateTimes" class="upgradeWorkerRateTimes">0</span></span>
+		<button id="upgradeWorkerButton" class="upgradeButton" onclick="Upgrade('moneyPerSecond')">Hire Worker <br> <span id="upgradeWorker"class="buyText">$moneycost</span> <br><span id="workers">Workers: number</span></button>
+		
+	</div>
+
+
+
+
+
+  </div>
+</body>
+
+</html>
